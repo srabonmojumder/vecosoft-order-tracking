@@ -4,18 +4,22 @@ import {
   Copy,
   CalendarClock,
   Check,
+  ExternalLink,
 } from "lucide-react";
 import { formatDate } from "../utils/helpers";
 import { useState } from "react";
 import "./DeliveryInfo.css";
 
-export default function DeliveryInfo({ order }) {
+export default function DeliveryInfo({ order, onToast }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
     if (order.trackingNumber) {
       navigator.clipboard.writeText(order.trackingNumber).then(() => {
         setCopied(true);
+        if (onToast) {
+          onToast(`Tracking #${order.trackingNumber} copied to clipboard!`, "success");
+        }
         setTimeout(() => setCopied(false), 2000);
       });
     }
@@ -23,7 +27,15 @@ export default function DeliveryInfo({ order }) {
 
   return (
     <div className="delivery-info-card animate-fade-in-up animate-delay-4">
-      <h3 className="section-title">Delivery Details</h3>
+      <div className="delivery-details-header">
+        <h3 className="section-title">Delivery Details</h3>
+        {order.carrier && (
+          <span className="carrier-badge">
+            <Truck size={12} />
+            {order.carrier} Express
+          </span>
+        )}
+      </div>
 
       {/* Estimated / Actual Delivery */}
       <div className="info-group">
@@ -35,19 +47,24 @@ export default function DeliveryInfo({ order }) {
             {order.actualDelivery
               ? "Delivered On"
               : order.revisedDelivery
-              ? "Revised Delivery"
+              ? "Revised Delivery Date"
               : "Estimated Delivery"}
           </span>
-          <span className="info-value">
-            {formatDate(
-              order.actualDelivery ||
-                order.revisedDelivery ||
-                order.estimatedDelivery
+          <div className="info-val-row">
+            <span className="info-value">
+              {formatDate(
+                order.actualDelivery ||
+                  order.revisedDelivery ||
+                  order.estimatedDelivery
+              )}
+            </span>
+            {order.revisedDelivery && !order.actualDelivery && (
+              <span className="eta-revised-tag">Delay Adjusted</span>
             )}
-          </span>
+          </div>
           {order.revisedDelivery && !order.actualDelivery && (
             <span className="info-original">
-              Originally: {formatDate(order.estimatedDelivery)}
+              Original ETA: {formatDate(order.estimatedDelivery)}
             </span>
           )}
         </div>
@@ -60,15 +77,15 @@ export default function DeliveryInfo({ order }) {
             <Truck size={16} />
           </div>
           <div className="info-content">
-            <span className="info-label">
-              {order.carrier} Tracking
-            </span>
+            <span className="info-label">{order.carrier} Tracking Number</span>
             <div className="tracking-row">
               <span className="tracking-number">{order.trackingNumber}</span>
               <button
+                type="button"
                 className="copy-btn"
                 onClick={handleCopy}
                 aria-label="Copy tracking number"
+                title="Copy tracking code"
               >
                 {copied ? (
                   <Check size={14} className="copy-check" />
@@ -85,9 +102,9 @@ export default function DeliveryInfo({ order }) {
             <Truck size={16} />
           </div>
           <div className="info-content">
-            <span className="info-label">Tracking Number</span>
+            <span className="info-label">Carrier & Tracking</span>
             <span className="info-value info-value-pending">
-              Pending — will be assigned once shipped
+              Assigned automatically upon courier package dispatch
             </span>
           </div>
         </div>
@@ -99,9 +116,9 @@ export default function DeliveryInfo({ order }) {
           <MapPin size={16} />
         </div>
         <div className="info-content">
-          <span className="info-label">Shipping Address</span>
+          <span className="info-label">Destination Address</span>
           <address className="info-address">
-            {order.shippingAddress.name}
+            <strong>{order.shippingAddress.name}</strong>
             <br />
             {order.shippingAddress.street}
             <br />

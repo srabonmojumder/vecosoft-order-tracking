@@ -10,6 +10,24 @@
   gap: var(--space-base);
 }
 
+.delivery-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carrier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f1f5f9;
+  color: var(--color-gray-700);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
 .info-group {
   display: flex;
   gap: var(--space-md);
@@ -56,10 +74,27 @@
   margin-bottom: 2px;
 }
 
+.info-val-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .info-value {
   font-size: var(--fs-base);
   font-weight: var(--fw-semibold);
   color: var(--color-gray-800);
+}
+
+.eta-revised-tag {
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
 }
 
 .info-value-pending {
@@ -67,6 +102,8 @@
   color: var(--color-gray-400);
   font-style: italic;
   font-size: var(--fs-sm);
+  display: block;
+  margin-top: 2px;
 }
 
 .info-original {
@@ -74,7 +111,7 @@
   font-size: var(--fs-xs);
   color: var(--color-gray-400);
   text-decoration: line-through;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 /* Tracking row */
@@ -103,6 +140,8 @@
   color: var(--color-gray-400);
   transition: all var(--transition-fast);
   flex-shrink: 0;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
 }
 
 .copy-btn:hover {
@@ -124,4 +163,8 @@
   font-size: var(--fs-sm);
   color: var(--color-gray-600);
   line-height: 1.5;
+}
+
+.info-address strong {
+  color: var(--color-gray-900);
 }

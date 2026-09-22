@@ -7,16 +7,40 @@
   border: 1px solid var(--color-gray-100);
 }
 
-.order-summary-card .section-title {
+.summary-header-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.summary-header-row .section-title {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.collapse-toggle-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-gray-100);
+  color: var(--color-gray-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.collapse-toggle-btn:hover {
+  background: var(--color-gray-200);
 }
 
 .item-count {
   font-size: var(--fs-xs);
   font-weight: var(--fw-medium);
-  color: var(--color-gray-400);
+  color: var(--color-gray-500);
   background: var(--color-gray-100);
   padding: 2px 8px;
   border-radius: var(--radius-full);
@@ -26,6 +50,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  margin-bottom: var(--space-base);
 }
 
 .item-row {
@@ -45,6 +70,7 @@
   justify-content: center;
   color: var(--color-gray-500);
   flex-shrink: 0;
+  border: 1px solid var(--color-gray-100);
 }
 
 .item-details {
@@ -92,7 +118,7 @@
 /* Totals */
 .order-totals {
   border-top: 1px dashed var(--color-gray-200);
-  margin-top: var(--space-base);
+  margin-top: var(--space-sm);
   padding-top: var(--space-base);
   display: flex;
   flex-direction: column;
@@ -107,6 +133,11 @@
   color: var(--color-gray-500);
 }
 
+.text-free-shipping {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
 .total-row span:last-child {
   font-variant-numeric: tabular-nums;
 }
@@ -118,4 +149,36 @@
   margin-top: var(--space-xs);
   padding-top: var(--space-sm);
   border-top: 1px solid var(--color-gray-200);
+}
+
+.final-price {
+  color: var(--color-primary);
+  font-size: 1.125rem;
+}
+
+/* Invoice Button */
+.invoice-download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: var(--space-base);
+  padding: 10px;
+  border-radius: var(--radius-lg);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: var(--color-gray-700);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.invoice-download-btn:hover {
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+.download-icon {
+  color: var(--color-gray-400);
 }
