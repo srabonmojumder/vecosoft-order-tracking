@@ -1,0 +1,158 @@
+.status-banner {
+  margin: var(--space-base);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.status-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    currentColor 8px,
+    currentColor 9px
+  );
+  pointer-events: none;
+}
+
+/* Color Variants */
+.banner-warning {
+  background: linear-gradient(135deg, var(--color-warning-lighter) 0%, #FFF7ED 100%);
+  border: 1px solid rgba(217, 119, 6, 0.15);
+  color: var(--color-warning-dark);
+}
+
+.banner-error {
+  background: linear-gradient(135deg, var(--color-error-lighter) 0%, #FFF5F5 100%);
+  border: 1px solid rgba(220, 38, 38, 0.15);
+  color: var(--color-error-dark);
+}
+
+.banner-info {
+  background: linear-gradient(135deg, var(--color-info-lighter) 0%, #EFF6FF 100%);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  color: var(--color-info-dark);
+}
+
+/* Content */
+.banner-content {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.banner-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-bg-warning {
+  background: rgba(217, 119, 6, 0.12);
+  color: var(--color-warning);
+}
+
+.icon-bg-error {
+  background: rgba(220, 38, 38, 0.12);
+  color: var(--color-error);
+}
+
+.icon-bg-info {
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--color-info);
+}
+
+.banner-title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  margin-bottom: 2px;
+  letter-spacing: -0.01em;
+}
+
+.banner-description {
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.banner-description strong {
+  font-weight: var(--fw-semibold);
+}
+
+/* ETA Pill */
+.banner-eta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(217, 119, 6, 0.08);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-sm);
+  width: fit-content;
+}
+
+.banner-eta strong {
+  font-weight: var(--fw-semibold);
+}
+
+/* Action Button */
+.banner-action {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  padding: 10px var(--space-base);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  width: 100%;
+  transition: all var(--transition-fast);
+}
+
+.banner-action-error {
+  background: var(--color-error);
+  color: white;
+}
+
+.banner-action-error:hover {
+  background: var(--color-error-dark);
+}
+
+.banner-action-error:active {
+  transform: scale(0.98);
+}
+
+.banner-action span {
+  flex: 1;
+  text-align: left;
+}
+
+/* Reassurance */
+.banner-reassurance {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  font-size: var(--fs-sm);
+  opacity: 0.8;
+}
+
+.reassurance-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-info);
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
