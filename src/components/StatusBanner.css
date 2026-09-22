@@ -89,21 +89,52 @@
   font-weight: var(--fw-semibold);
 }
 
-/* ETA Pill */
+/* ETA Row */
+.banner-eta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  flex-wrap: wrap;
+}
+
 .banner-eta {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  margin-top: var(--space-md);
   padding: var(--space-sm) var(--space-md);
-  background: rgba(217, 119, 6, 0.08);
+  background: rgba(217, 119, 6, 0.1);
   border-radius: var(--radius-full);
   font-size: var(--fs-sm);
-  width: fit-content;
 }
 
 .banner-eta strong {
   font-weight: var(--fw-semibold);
+}
+
+.spin-slow {
+  animation: spin 6s linear infinite;
+}
+
+.banner-mini-action {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: var(--color-warning-dark);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  transition: all var(--transition-fast);
+}
+
+.banner-mini-action:hover {
+  background: #fef3c7;
+  transform: translateY(-1px);
 }
 
 /* Action Button */
@@ -112,10 +143,10 @@
   align-items: center;
   gap: var(--space-sm);
   margin-top: var(--space-md);
-  padding: 10px var(--space-base);
+  padding: 11px var(--space-base);
   border-radius: var(--radius-lg);
   font-size: var(--fs-sm);
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-bold);
   width: 100%;
   transition: all var(--transition-fast);
 }
@@ -123,10 +154,13 @@
 .banner-action-error {
   background: var(--color-error);
   color: white;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
 }
 
 .banner-action-error:hover {
   background: var(--color-error-dark);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35);
+  transform: translateY(-1px);
 }
 
 .banner-action-error:active {
@@ -138,14 +172,22 @@
   text-align: left;
 }
 
-/* Reassurance */
+/* Reassurance & Notification */
+.banner-actions-no-tracking {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: var(--space-md);
+  flex-wrap: wrap;
+}
+
 .banner-reassurance {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  margin-top: var(--space-md);
-  font-size: var(--fs-sm);
-  opacity: 0.8;
+  font-size: var(--fs-xs);
+  opacity: 0.85;
 }
 
 .reassurance-dot {
@@ -155,4 +197,27 @@
   background: var(--color-info);
   animation: pulse 2s ease-in-out infinite;
   flex-shrink: 0;
+}
+
+.notify-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: var(--color-info);
+  color: white;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+}
+
+.notify-toggle-btn:hover {
+  background: var(--color-info-dark);
+}
+
+.notify-toggle-btn.subscribed {
+  background: #059669;
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.2);
 }

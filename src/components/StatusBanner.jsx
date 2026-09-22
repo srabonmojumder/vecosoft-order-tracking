@@ -5,7 +5,11 @@ import {
   RefreshCw,
   Headphones,
   ChevronRight,
+  Bell,
+  Check,
+  MessageSquare,
 } from "lucide-react";
+import { useState } from "react";
 import "./StatusBanner.css";
 
 const bannerConfig = {
@@ -29,11 +33,17 @@ const bannerConfig = {
   },
 };
 
-export default function StatusBanner({ order }) {
+export default function StatusBanner({ order, onOpenReport, onOpenChat, onNotifyMe }) {
+  const [subscribed, setSubscribed] = useState(false);
   const config = bannerConfig[order.status];
   if (!config) return null;
 
   const Icon = config.icon;
+
+  const handleNotify = () => {
+    setSubscribed(true);
+    if (onNotifyMe) onNotifyMe();
+  };
 
   return (
     <div
@@ -50,58 +60,91 @@ export default function StatusBanner({ order }) {
           {order.status === "delayed" && (
             <p className="banner-description">
               {order.delayReason ||
-                "Your delivery has been delayed. We're working to get it to you as soon as possible."}
+                "Your delivery has been delayed due to regional weather. We're prioritizing your parcel."}
             </p>
           )}
           {order.status === "not-received" && (
             <p className="banner-description">
-              Our records show this was delivered on{" "}
+              Our courier records show this was delivered on{" "}
               <strong>
                 {new Date(order.actualDelivery).toLocaleDateString("en-US", {
                   month: "short",
                   day: "numeric",
                 })}
               </strong>
-              . If you didn't receive it, we're here to help.
+              . If you didn't receive it, we're here to help immediately.
             </p>
           )}
           {order.status === "no-tracking" && (
             <p className="banner-description">
-              Your order is confirmed and being prepared. Tracking details will
-              be available once it ships.
+              Your order is confirmed and being prepared in the fulfillment hub. Tracking will be assigned once it ships.
             </p>
           )}
         </div>
       </div>
 
       {order.status === "delayed" && order.revisedDelivery && (
-        <div className="banner-eta">
-          <RefreshCw size={14} />
-          <span>
-            New estimated delivery:{" "}
-            <strong>
-              {new Date(order.revisedDelivery).toLocaleDateString("en-US", {
-                weekday: "short",
-                month: "short",
-                day: "numeric",
-              })}
-            </strong>
-          </span>
+        <div className="banner-eta-row">
+          <div className="banner-eta">
+            <RefreshCw size={14} className="spin-slow" />
+            <span>
+              New ETA:{" "}
+              <strong>
+                {new Date(order.revisedDelivery).toLocaleDateString("en-US", {
+                  weekday: "short",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </strong>
+            </span>
+          </div>
+
+          <button
+            type="button"
+            className="banner-mini-action"
+            onClick={onOpenChat}
+          >
+            <MessageSquare size={13} />
+            <span>Ask Support</span>
+          </button>
         </div>
       )}
 
       {order.status === "not-received" && (
-        <button className="banner-action banner-action-error">
+        <button
+          type="button"
+          className="banner-action banner-action-error"
+          onClick={onOpenReport}
+        >
           <Headphones size={16} />
-          <span>Report Missing Package</span>
+          <span>Report Missing Package (Instant Resolution)</span>
           <ChevronRight size={16} />
         </button>
       )}
 
       {order.status === "no-tracking" && (
-        <div className="banner-reassurance">
-          <div className="reassurance-dot" />
-          <span>We'll notify you when tracking is available</span>
+        <div className="banner-actions-no-tracking">
+          <div className="banner-reassurance">
+            <div className="reassurance-dot" />
+            <span>We'll notify you automatically via SMS & Email</span>
+          </div>
+          <button
+            type="button"
+            className={`notify-toggle-btn ${subscribed ? "subscribed" : ""}`}
+            onClick={handleNotify}
+          >
+            {subscribed ? (
+              <>
+                <Check size={14} />
+                <span>Alerts Enabled</span>
+              </>
+            ) : (
+              <>
+                <Bell size={14} />
+                <span>Get SMS Alerts</span>
+              </>
+            )}
+          </button>
         </div>
       )}
     </div>

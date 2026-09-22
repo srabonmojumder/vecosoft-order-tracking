@@ -1,0 +1,136 @@
+.scenario-switcher-bar {
+  background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+  color: #ffffff;
+  padding: 10px 14px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 90;
+}
+
+.scenario-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.6875rem;
+}
+
+.scenario-title-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #a5b4fc;
+}
+
+.live-pulsing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: pulseGlow 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.6;
+  }
+}
+
+.scenario-meta {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.6875rem;
+}
+
+.scenario-pill-list {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scenario-pill-list::-webkit-scrollbar {
+  display: none;
+}
+
+.scenario-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scenario-pill:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.scenario-pill:active {
+  transform: scale(0.95);
+}
+
+/* Active variants */
+.scenario-pill-warning.active {
+  background: #d97706;
+  color: #ffffff;
+  border-color: #f59e0b;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+}
+
+.scenario-pill-error.active {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #ef4444;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.45);
+}
+
+.scenario-pill-info.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.45);
+}
+
+.scenario-pill-neutral.active {
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #818cf8;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.45);
+}
+
+.scenario-pill-danger.active {
+  background: #b91c1c;
+  color: #ffffff;
+  border-color: #f87171;
+  box-shadow: 0 0 12px rgba(220, 38, 38, 0.45);
+}
+
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
