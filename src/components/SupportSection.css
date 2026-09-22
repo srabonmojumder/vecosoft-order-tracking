@@ -1,0 +1,136 @@
+.support-card {
+  margin: var(--space-base);
+  margin-bottom: var(--space-2xl);
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-100);
+}
+
+.support-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.support-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.support-btn:hover {
+  background: var(--color-gray-50);
+}
+
+.support-btn:active {
+  transform: scale(0.98);
+  background: var(--color-gray-100);
+}
+
+.support-btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.support-btn-phone {
+  background: linear-gradient(135deg, #DBEAFE 0%, #E0E7FF 100%);
+  color: var(--color-primary);
+}
+
+.support-btn-email {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FFEDD5 100%);
+  color: var(--color-warning);
+}
+
+.support-btn-chat {
+  background: linear-gradient(135deg, #D1FAE5 0%, #DCFCE7 100%);
+  color: var(--color-success);
+}
+
+.support-btn-content {
+  flex: 1;
+  text-align: left;
+}
+
+.support-btn-label {
+  display: block;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--color-gray-800);
+}
+
+.support-btn-sub {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--color-gray-400);
+  margin-top: 1px;
+}
+
+.support-chevron {
+  color: var(--color-gray-300);
+  flex-shrink: 0;
+}
+
+.live-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-success);
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* Report Issue Buttons */
+.report-issue-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  margin-top: var(--space-base);
+  padding: var(--space-md) var(--space-base);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  background: var(--color-error-lighter);
+  color: var(--color-error-dark);
+  border: 1px solid rgba(220, 38, 38, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.report-issue-btn:hover {
+  background: var(--color-error);
+  color: white;
+  border-color: var(--color-error);
+}
+
+.report-issue-btn:active {
+  transform: scale(0.98);
+}
+
+.report-issue-btn span {
+  flex: 1;
+  text-align: left;
+}
+
+.report-issue-warning {
+  background: var(--color-warning-lighter);
+  color: var(--color-warning-dark);
+  border-color: rgba(217, 119, 6, 0.1);
+}
+
+.report-issue-warning:hover {
+  background: var(--color-warning);
+  color: white;
+  border-color: var(--color-warning);
+}
