@@ -1,6 +1,28 @@
 .order-list-page {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
   padding: var(--space-base);
   padding-bottom: var(--space-3xl);
+}
+
+.order-list-page::-webkit-scrollbar {
+  width: 5px;
+}
+
+.order-list-page::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.order-list-page::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+}
+
+.order-list-page::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
 }
 
 /* Assessment Card Banner */

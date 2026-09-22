@@ -1,5 +1,26 @@
 .tracking-page {
-  padding-bottom: env(safe-area-inset-bottom, 0);
-  min-height: calc(100vh - 56px);
-  min-height: calc(100dvh - 56px);
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding-bottom: 32px;
+}
+
+/* Custom modern scrollbar for desktop preview */
+.tracking-page::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tracking-page::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tracking-page::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+}
+
+.tracking-page::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
 }
