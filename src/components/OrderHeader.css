@@ -1,0 +1,78 @@
+.order-header {
+  padding: var(--space-base) var(--space-base) 0;
+}
+
+.order-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.order-number-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.order-number-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  background: var(--color-gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-500);
+}
+
+.order-number {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-gray-700);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.status-badge {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.status-badge-warning {
+  background: var(--color-warning-lighter);
+  color: var(--color-warning-dark);
+}
+
+.status-badge-error {
+  background: var(--color-error-lighter);
+  color: var(--color-error-dark);
+}
+
+.status-badge-info {
+  background: var(--color-info-lighter);
+  color: var(--color-info-dark);
+}
+
+.status-badge-success {
+  background: var(--color-success-lighter);
+  color: var(--color-success-dark);
+}
+
+.status-badge-primary {
+  background: var(--color-primary-lighter);
+  color: var(--color-primary-dark);
+}
+
+.order-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-sm);
+  color: var(--color-gray-400);
+  margin-top: var(--space-sm);
+}
