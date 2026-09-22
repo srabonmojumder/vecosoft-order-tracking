@@ -56,20 +56,31 @@
   display: flex;
   gap: 6px;
   overflow-x: auto;
-  padding-bottom: 2px;
+  padding-bottom: 4px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .scenario-pill-list::-webkit-scrollbar {
   display: none;
 }
 
+.scenario-pill-list.grabbing {
+  cursor: grabbing;
+}
+
+.scenario-pill-list.grabbing .scenario-pill {
+  cursor: grabbing;
+}
+
 .scenario-pill {
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 9999px;
   font-size: 0.6875rem;
   font-weight: 600;
@@ -78,6 +89,8 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   white-space: nowrap;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .scenario-pill:hover {
