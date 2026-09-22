@@ -1,0 +1,127 @@
+.delivery-info-card {
+  margin: var(--space-base);
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-100);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base);
+}
+
+.info-group {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.info-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-icon-calendar {
+  background: var(--color-primary-lighter);
+  color: var(--color-primary);
+}
+
+.info-icon-truck {
+  background: var(--color-success-lighter);
+  color: var(--color-success);
+}
+
+.info-icon-pin {
+  background: var(--color-warning-lighter);
+  color: var(--color-warning);
+}
+
+.info-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.info-label {
+  display: block;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.info-value {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--color-gray-800);
+}
+
+.info-value-pending {
+  font-weight: var(--fw-medium);
+  color: var(--color-gray-400);
+  font-style: italic;
+  font-size: var(--fs-sm);
+}
+
+.info-original {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--color-gray-400);
+  text-decoration: line-through;
+  margin-top: 1px;
+}
+
+/* Tracking row */
+.tracking-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.tracking-number {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-gray-700);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  word-break: break-all;
+}
+
+.copy-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-400);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  background: var(--color-gray-100);
+  color: var(--color-primary);
+}
+
+.copy-btn:active {
+  transform: scale(0.9);
+}
+
+.copy-check {
+  color: var(--color-success);
+}
+
+/* Address */
+.info-address {
+  font-style: normal;
+  font-size: var(--fs-sm);
+  color: var(--color-gray-600);
+  line-height: 1.5;
+}
