@@ -1,0 +1,5 @@
+.tracking-page {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  min-height: calc(100vh - 56px);
+  min-height: calc(100dvh - 56px);
+}

@@ -1,0 +1,209 @@
+.order-list-page {
+  padding: var(--space-base);
+  padding-bottom: var(--space-3xl);
+}
+
+/* Intro Section */
+.page-intro {
+  text-align: center;
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.intro-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-base);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.25);
+}
+
+.page-heading {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-gray-900);
+  letter-spacing: -0.02em;
+}
+
+.page-sub {
+  font-size: var(--fs-sm);
+  color: var(--color-gray-400);
+  margin-top: var(--space-xs);
+}
+
+/* Order Cards */
+.order-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.order-card {
+  display: block;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-base);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-100);
+  transition: all var(--transition-base);
+  text-decoration: none;
+  color: inherit;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.order-card:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Card BGs */
+.card-bg-warning {
+  border-left: 3px solid var(--color-warning);
+}
+
+.card-bg-error {
+  border-left: 3px solid var(--color-error);
+}
+
+.card-bg-info {
+  border-left: 3px solid var(--color-info);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.card-status-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-icon-warning {
+  background: var(--color-warning-lighter);
+  color: var(--color-warning);
+}
+
+.card-icon-error {
+  background: var(--color-error-lighter);
+  color: var(--color-error);
+}
+
+.card-icon-info {
+  background: var(--color-info-lighter);
+  color: var(--color-info);
+}
+
+.card-info {
+  flex: 1;
+}
+
+.card-order-num {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--color-gray-800);
+}
+
+.card-date {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--color-gray-400);
+  margin-top: 1px;
+}
+
+.card-chevron {
+  color: var(--color-gray-300);
+  flex-shrink: 0;
+}
+
+/* Card Body */
+.card-body {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.card-item-name {
+  font-size: var(--fs-sm);
+  color: var(--color-gray-600);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-more {
+  font-size: var(--fs-xs);
+  color: var(--color-gray-400);
+  background: var(--color-gray-100);
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-badge {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.card-badge-warning {
+  background: var(--color-warning-lighter);
+  color: var(--color-warning-dark);
+}
+
+.card-badge-error {
+  background: var(--color-error-lighter);
+  color: var(--color-error-dark);
+}
+
+.card-badge-info {
+  background: var(--color-info-lighter);
+  color: var(--color-info-dark);
+}
+
+.card-total {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--color-gray-900);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Demo Note */
+.demo-note {
+  text-align: center;
+  margin-top: var(--space-xl);
+  padding: var(--space-md);
+}
+
+.demo-note p {
+  font-size: var(--fs-xs);
+  color: var(--color-gray-400);
+  font-style: italic;
+}
